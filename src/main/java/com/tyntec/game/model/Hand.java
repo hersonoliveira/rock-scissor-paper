@@ -19,8 +19,10 @@ public enum Hand {
         ROCK.win = SCISSORS;
     }
 
-    public boolean winAgainst(Hand hand) {
-        return win.equals(hand);
+    public int resultAgainst(Hand hand) {
+        if (this.equals(hand)) return 0;
+        if (win.equals(hand)) return 1;
+        return -1;
     }
 
     public static Hand randomHand() {

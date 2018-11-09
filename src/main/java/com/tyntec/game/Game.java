@@ -18,9 +18,9 @@ public class Game {
             playerA.setHand(Hand.PAPER);
             playerB.setHand(Hand.randomHand());
 
-            if (playerA.getHand().equals(playerB.getHand())) tie++;
-            if (playerA.getHand().winAgainst(playerB.getHand())) scoreA++;
-            if (playerB.getHand().winAgainst(playerA.getHand())) scoreB++;
+            if (playerA.getHand().resultAgainst(playerB.getHand())==0) tie++;
+            if (playerA.getHand().resultAgainst(playerB.getHand())==1) scoreA++;
+            if (playerA.getHand().resultAgainst(playerB.getHand())==-1) scoreB++;
         }
 
         System.out.println(String.format("%s wins %d of %d games", playerA.getName(), scoreA, numRounds));
